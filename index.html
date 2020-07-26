@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Rock Paper Scissors</title>
+  <style>
+    input {
+      font-size: 2em;
+      margin: 10px 1px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <input class="numberInput" type="text">
+  <p></p>
+
+  <script>
+      const playerSelection = "rock";
+      const computerSelection = computerPlay();
+
+      function computerPlay(){
+          let a = Math.floor(Math.random() * Math.floor(3))
+          if (a == 0){
+              return "rock"
+          } else if (a == 1) {
+              return "paper"
+          } else if (a == 2) {
+              return "scissors"
+          }
+      }
+
+      function playRound(playerSelection, computerSelection) {
+        let winner = "";
+        
+        switch(playerSelection, computerSelection) {
+            case (playerSelection == "scissors" && computerSelection == "paper"):
+                winner = "Player wins!";
+            case (playerSelection == "rock" && computerSelection == "paper"):
+                winner = "Computer wins!";
+            case (playerSelection == "scissors" && computerSelection == "rock"):
+                winner = "Computer wins!";
+            case (playerSelection == "paper" && computerSelection == "rock"):
+                winner = "Player wins!";
+            case (playerSelection == "paper" && computerSelection == "scissors"):
+                winner = "Player wins!";
+            case (playerSelection == "rock" && computerSelection == "scissors"):
+                winner = "Player wins!";
+            case (playerSelection == computerSelection):
+                winner = "Draw";
+        }
+        }
+
+  </script>
+</body>
+</html>
