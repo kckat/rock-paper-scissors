@@ -4,78 +4,23 @@
   <meta charset="utf-8">
   <title>Rock Paper Scissors</title>
   <style>
-    /* input {
-      font-size: 2em;
-      margin: 10px 1px 0;
-    } */
+
   </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="buttons">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
 
-  <!-- <input class="numberInput" type="text">
-  <p></p> -->
+    <div class="winner">
+    </div>
 
-  <script>
-      const playerSelection = "rock";
-      const computerSelection = computerPlay();
+    <div class="score">
+    </div>
 
-      function computerPlay(){
-          let a = Math.floor(Math.random() * Math.floor(3))
-          if (a == 0){
-              return "rock"
-          } else if (a == 1) {
-              return "paper"
-          } else if (a == 2) {
-              return "scissors"
-          }
-      }
-
-      function playRound(a, b) {
-        let winner = "";
-        let player = a.toLowerCase();
-        let comp = b;
-        switch(true) {
-            case (player == "scissors" && comp == "paper"):
-            case (player == "paper" && comp == "rock"):
-            case (player == "rock" && comp == "scissors"):
-                winner = "Player wins!";
-                break;
-            case (player == "rock" && comp == "paper"):
-            case (player == "scissors" && comp == "rock"):
-            case (player == "paper" && comp == "scissors"):
-                winner = "Computer wins!";
-                break;
-            case (player == comp):
-                winner = "Draw"; 
-                break;
-            default:
-                winner = "Something went wrong"
-        }
-        console.log("player: " + player + " computer: " + comp)
-        return winner;  
-        }
-
-        function game() {
-            console.log("Let's play a rousing game of rock, paper, scissors!")
-            let scorePlayer = 0
-            let scoreComputer = 0
-            for (let i = 0; i < 5; i++) {
-                let playerAnswer = prompt("Do you choose rock, paper or scissors?")
-                let gamePlay = playRound(playerAnswer, computerSelection)
-                console.log(gamePlay)
-                    if(gamePlay == "Player wins!"){
-                        scorePlayer += 1
-                        console.log("score || player: " + scorePlayer + " computer: " + scoreComputer)
-                    } else if (gamePlay == "Computer wins!") {
-                        scoreComputer += 1
-                        console.log("score || player: " + scorePlayer + " computer: " + scoreComputer)
-                    } else if (gamePlay == "Draw") {
-                        console.log("score || player: " + scorePlayer + " computer: " + scoreComputer)
-                    }
-
-            }
-        }
-
-  </script>
+  <script src="scripts.js">  </script>
 </body>
 </html>
