@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <title>Rock Paper Scissors</title>
   <style>
-    input {
+    /* input {
       font-size: 2em;
       margin: 10px 1px 0;
-    }
+    } */
   </style>
 </head>
 <body>
 
-  <input class="numberInput" type="text">
-  <p></p>
+  <!-- <input class="numberInput" type="text">
+  <p></p> -->
 
   <script>
       const playerSelection = "rock";
@@ -30,25 +30,50 @@
           }
       }
 
-      function playRound(playerSelection, computerSelection) {
+      function playRound(a, b) {
         let winner = "";
-        
-        switch(playerSelection, computerSelection) {
-            case (playerSelection == "scissors" && computerSelection == "paper"):
+        let player = a.toLowerCase();
+        let comp = b;
+        switch(true) {
+            case (player == "scissors" && comp == "paper"):
+            case (player == "paper" && comp == "rock"):
+            case (player == "rock" && comp == "scissors"):
                 winner = "Player wins!";
-            case (playerSelection == "rock" && computerSelection == "paper"):
+                break;
+            case (player == "rock" && comp == "paper"):
+            case (player == "scissors" && comp == "rock"):
+            case (player == "paper" && comp == "scissors"):
                 winner = "Computer wins!";
-            case (playerSelection == "scissors" && computerSelection == "rock"):
-                winner = "Computer wins!";
-            case (playerSelection == "paper" && computerSelection == "rock"):
-                winner = "Player wins!";
-            case (playerSelection == "paper" && computerSelection == "scissors"):
-                winner = "Player wins!";
-            case (playerSelection == "rock" && computerSelection == "scissors"):
-                winner = "Player wins!";
-            case (playerSelection == computerSelection):
-                winner = "Draw";
+                break;
+            case (player == comp):
+                winner = "Draw"; 
+                break;
+            default:
+                winner = "Something went wrong"
         }
+        console.log("player: " + player + " computer: " + comp)
+        return winner;  
+        }
+
+        function game() {
+            console.log("Let's play a rousing game of rock, paper, scissors!")
+            let scorePlayer = 0
+            let scoreComputer = 0
+            for (let i = 0; i < 5; i++) {
+                let playerAnswer = prompt("Do you choose rock, paper or scissors?")
+                let gamePlay = playRound(playerAnswer, computerSelection)
+                console.log(gamePlay)
+                    if(gamePlay == "Player wins!"){
+                        scorePlayer += 1
+                        console.log("score || player: " + scorePlayer + " computer: " + scoreComputer)
+                    } else if (gamePlay == "Computer wins!") {
+                        scoreComputer += 1
+                        console.log("score || player: " + scorePlayer + " computer: " + scoreComputer)
+                    } else if (gamePlay == "Draw") {
+                        console.log("score || player: " + scorePlayer + " computer: " + scoreComputer)
+                    }
+
+            }
         }
 
   </script>
