@@ -34,10 +34,13 @@ resetButton.style.borderRadius = '5px'
 function computerPlay(){
     let a = Math.floor(Math.random() * Math.floor(3))
     if (a == 0){
+        computerHand.setAttribute('src','assets/rock.png')
         return "rock"
     } else if (a == 1) {
+        computerHand.setAttribute('src','assets/paper.png')
         return "paper"
     } else if (a == 2) {
+        computerHand.setAttribute('src','assets/scissors.png')
         return "scissors"
     }
 }
@@ -73,6 +76,8 @@ function playRound(player, comp) {
   
     playerChoice = player
     compChoice = comp
+    console.log("comp: " + compChoice)
+    console.log("player: "+ playerChoice)
     return win.textContent = winner  
 }
 
@@ -92,41 +97,10 @@ function playRound(player, comp) {
     console.log(roundsPlayed)
   }
 
-// Reset Variables
-
 function resetVariables(playerChoice, compChoice){
     playerChoice = "";
     compChoice = "";
 }
-
-//   images change with player and computer selection
-  function displayPChoice(playerChoice){
-      switch(true){
-          case(playerChoice == 'rock'):
-          humanHand.setAttribute('src','assets/rock.png')
-          break;
-          case(playerChoice == 'paper'):
-          humanHand.setAttribute('src','assets/paper.png')
-          break;
-          case(playerChoice == 'scissors'):
-          humanHand.setAttribute('src','assets/scissors.png')
-          break;
-      }
-  }
-
-  function displayCChoice(compChoice) {
-      switch(true){
-        case(compChoice == 'rock'):
-        computerHand.setAttribute('src','assets/rock.png')
-        break;
-        case(compChoice == 'paper'):
-        computerHand.setAttribute('src','assets/paper.png')
-        break;
-        case(compChoice == 'scissors'):
-        computerHand.setAttribute('src','assets/scissors.png')
-        break;
-      }
-  }
 
 
 //   Declare a winner and  give option to reset the game
@@ -166,26 +140,23 @@ function resetGame(){
 
 // Clicking on the buttons activates game
     rock.addEventListener('click', () => {
+        humanHand.setAttribute('src','assets/rock.png')
         playRound('rock', computerPlay())
-        displayPChoice(playerChoice)
-        displayCChoice(compChoice)
         checkScore(winner)
         declareWinner(roundsPlayed)
-        resetVariables()
+  
 
     })
     paper.addEventListener('click', () => {
+        humanHand.setAttribute('src','assets/paper.png')
         playRound('paper', computerPlay())
-        displayPChoice(playerChoice)
-        displayCChoice(compChoice)
         checkScore(winner)
         declareWinner(roundsPlayed)
         resetVariables()
     })
     scissors.addEventListener('click', () => {
+        humanHand.setAttribute('src','assets/scissors.png')
         playRound('scissors', computerPlay())
-        displayPChoice(playerChoice)
-        displayCChoice(compChoice)
         checkScore(winner)
         declareWinner(roundsPlayed)
         resetVariables()
