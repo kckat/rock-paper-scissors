@@ -2,3 +2,13 @@ input {
     font-size: 2em;
     margin: 10px 1px 0;
   }
+
+  .players {
+    display: flex;
+  }
+
+  .player {
+    height: 200px;
+    width: 200px;
+    border: black solid 1px;
+  }
