@@ -9,27 +9,30 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
     <div class="players">
-      <div class="player" id="human"></div>
-        <img class="hand" src="" id="humanHand">
+      <div class="player" id="human">   
+        <img id="person" src="assets/person.png">   
+        <img class="image" id="humanHand" src= "assets/Empty.png">
+      </div>
+  
       <div class="player" id="computer">
-        <img class="hand" src="" id="computerHand">
+        <img class="image" id="computerHand"src= "assets/Empty.png">
+        <img id="desktop" src="assets/computer.png">
       </div>
     </div>
     <div class="buttons">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+        <button class="button-hands" id="rock" alt="rock"> </button>
+        <button class="button-hands" id="paper" alt="paper"></button>
+        <button class="button-hands" id="scissors" alt="scissors"></button>
     </div>
 
-    <div class="winner">
-    </div>
+    <div class="winner"></div>
 
-    <div class="score">
-    </div>
+    <div class="score"></div>
 
     <div class="reset"></div>
-
+  </div>
   <script src="scripts.js">  </script>
 </body>
 </html>
