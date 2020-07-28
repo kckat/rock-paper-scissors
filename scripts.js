@@ -54,9 +54,9 @@ function playRound(player, comp) {
           humanContainer.style.backgroundColor = '#ccffdf'
           computerContainer.style.backgroundColor = '#ffccd6'
           break;
-      case (player == "rock" && comp == "paper"):
-      case (player == "scissors" && comp == "rock"):
-      case (player == "paper" && comp == "scissors"):
+      case (comp == "scissors" && player == "paper"):
+        case (comp == "paper" && player == "rock"):
+        case (comp == "rock" && player == "scissors"):
           winner = "Computer wins!";
           computerContainer.style.backgroundColor = '#ccffdf'
           humanContainer.style.backgroundColor = '#ffccd6'
