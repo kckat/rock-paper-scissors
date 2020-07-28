@@ -47,26 +47,26 @@ function playRound(player, comp) {
    player = player.toLowerCase();
   
   switch(true) {
-      case (player == "scissors" && comp == "paper"):
-      case (player == "paper" && comp == "rock"):
-      case (player == "rock" && comp == "scissors"):
+    case (player == "scissors" && comp == "paper"):
+    case (player == "paper" && comp == "rock"):
+    case (player == "rock" && comp == "scissors"):
+            winner = "Computer wins!";
+            computerContainer.style.backgroundColor = '#ccffdf'
+            humanContainer.style.backgroundColor = '#ffccd6'
+            break;
+    case (comp == "scissors" && player == "paper"):
+    case (comp == "paper" && player == "rock"):
+    case (comp == "rock" && player == "scissors"):
           winner = "Player wins!";
           humanContainer.style.backgroundColor = '#ccffdf'
           computerContainer.style.backgroundColor = '#ffccd6'
           break;
-      case (comp == "scissors" && player == "paper"):
-        case (comp == "paper" && player == "rock"):
-        case (comp == "rock" && player == "scissors"):
-          winner = "Computer wins!";
-          computerContainer.style.backgroundColor = '#ccffdf'
-          humanContainer.style.backgroundColor = '#ffccd6'
-          break;
-      case (player == comp):
+    case (player == comp):
           winner = "Draw"; 
           computerContainer.style.backgroundColor = '#fff8cc'
           humanContainer.style.backgroundColor = '#fff8cc'
           break;
-      default:
+    default:
           winner = "Something went wrong"
   }
   
@@ -91,6 +91,12 @@ function playRound(player, comp) {
     console.log(roundsPlayed)
   }
 
+// Reset Variables
+
+function resetVariables(playerChoice, compChoice){
+    playerChoice = "";
+    compChoice = "";
+}
 
 //   images change with player and computer selection
   function displayPChoice(playerChoice){
@@ -154,6 +160,8 @@ function resetGame(){
     reset.removeChild(resetButton)
 }
 
+
+
 // Clicking on the buttons activates game
     rock.addEventListener('click', () => {
         playRound('rock', computerPlay())
@@ -161,6 +169,7 @@ function resetGame(){
         displayCChoice(compChoice)
         checkScore(winner)
         declareWinner(roundsPlayed)
+        resetVariables()
 
     })
     paper.addEventListener('click', () => {
@@ -169,6 +178,7 @@ function resetGame(){
         displayCChoice(compChoice)
         checkScore(winner)
         declareWinner(roundsPlayed)
+        resetVariables()
     })
     scissors.addEventListener('click', () => {
         playRound('scissors', computerPlay())
@@ -176,6 +186,7 @@ function resetGame(){
         displayCChoice(compChoice)
         checkScore(winner)
         declareWinner(roundsPlayed)
+        resetVariables()
     })
 
     resetButton.addEventListener('click', () => {
