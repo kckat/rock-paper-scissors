@@ -1,5 +1,4 @@
-const playerSelection = "rock";
-const computerSelection = computerPlay();
+//declare global variables
 
 let playerChoice = "";
 let compChoice = "";
@@ -43,6 +42,7 @@ function computerPlay(){
     }
 }
 
+// Play one round of rock paper scissors. Stores answers in global variable to use in other functions.
 function playRound(player, comp) {
    player = player.toLowerCase();
   
@@ -75,6 +75,7 @@ function playRound(player, comp) {
     return win.textContent = winner  
 }
 
+//  Return current score of game
 
   function checkScore(win) {
         if(win == "Player wins!"){
@@ -120,6 +121,8 @@ function playRound(player, comp) {
       }
   }
 
+
+//   Declare a winner and  give option to reset the game
 
 function declareWinner(roundsPlayed) {
       if(roundsPlayed == 5){
