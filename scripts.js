@@ -50,16 +50,17 @@ function playRound(player, comp) {
     case (player == "scissors" && comp == "paper"):
     case (player == "paper" && comp == "rock"):
     case (player == "rock" && comp == "scissors"):
-            winner = "Computer wins!";
-            computerContainer.style.backgroundColor = '#ccffdf'
-            humanContainer.style.backgroundColor = '#ffccd6'
+        winner = "Player wins!";
+        humanContainer.style.backgroundColor = '#ccffdf'
+        computerContainer.style.backgroundColor = '#ffccd6'
             break;
     case (comp == "scissors" && player == "paper"):
     case (comp == "paper" && player == "rock"):
     case (comp == "rock" && player == "scissors"):
-          winner = "Player wins!";
-          humanContainer.style.backgroundColor = '#ccffdf'
-          computerContainer.style.backgroundColor = '#ffccd6'
+        winner = "Computer wins!";
+        computerContainer.style.backgroundColor = '#ccffdf'
+        humanContainer.style.backgroundColor = '#ffccd6'
+          
           break;
     case (player == comp):
           winner = "Draw"; 
