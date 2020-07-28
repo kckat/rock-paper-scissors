@@ -158,6 +158,7 @@ function resetGame(){
     score.textContent = ""
     reset.textContent = ""
     reset.removeChild(resetButton)
+    resetVariables()
 }
 
 
