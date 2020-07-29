@@ -114,6 +114,10 @@ function declareWinner(roundsPlayed) {
           } else if (scorePlayer == scoreComputer) {
             reset.textContent = "It's a Draw"
           }
+          rock.disabled = true; //stop buttons from working so game can reset
+          paper.disabled = true;
+          scissors.disabled = true; 
+
           reset.style.fontWeight = '600'
           reset.style.margin = '5px'
           reset.appendChild(resetButton)
@@ -125,6 +129,9 @@ function resetGame(){
     scorePlayer = 0
     scoreComputer = 0
     roundsPlayed = 0
+    rock.disabled = false; 
+    paper.disabled = false;
+    scissors.disabled = false; 
     humanHand.setAttribute('src', 'assets/Empty.png')
     computerHand.setAttribute('src', 'assets/Empty.png')
     computerContainer.style.backgroundColor = '#fff'
@@ -134,6 +141,7 @@ function resetGame(){
     reset.textContent = ""
     reset.removeChild(resetButton)
     resetVariables()
+
 }
 
 
